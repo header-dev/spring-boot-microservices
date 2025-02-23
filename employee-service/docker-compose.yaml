@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  employee-service-db:
+    image: postgres:latest
+    container_name: employee_service_db
+    restart: always
+    environment:
+      POSTGRES_USER: masterdb
+      POSTGRES_PASSWORD: Daisy@3006
+      POSTGRES_DB: employee_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

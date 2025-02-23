@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  department-service-db:
+    image: postgres:latest
+    container_name: department_service_db
+    restart: always
+    environment:
+      POSTGRES_USER: masterdb
+      POSTGRES_PASSWORD: Daisy@3006
+      POSTGRES_DB: department_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
